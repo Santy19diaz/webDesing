@@ -137,7 +137,7 @@ h1,h2,h3{
 }
 
 .hero{
-    background-image: url(../images/fondo.jpg);
+    background-image: url(../Images/fondo.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     height: 41rem;
