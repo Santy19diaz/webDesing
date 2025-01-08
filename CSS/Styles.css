@@ -1,0 +1,268 @@
+:root {
+    --blanco: #FFFFFF;
+    --negro: #212121;
+    --primario: #7244ff;
+    --oscuro: #33687b;
+    --fondo-secundario: #3181dc;
+    --primario-fonte: #ACA2E1;
+    --primario-fonte-secundario: #ece8fc;
+}
+/*globales*/
+html{
+    font-size:  62.5%; /*esto se aplica junto con lo de body para que nuestra pagina web se adapte mas a los distintos dispositivos*/
+    box-sizing: border-box;
+    scroll-snap-type: y mandatory;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+/*scroll*/
+.servicios ,
+.navegacion-principal,
+.formulario{
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+}
+
+body{
+    font-size:  16px;/*1 rem = 10px*/
+    font-family: "Roboto", serif;
+    background-color: var(--primario-fonte);
+    background-image: linear-gradient(to top, var(--primario-fonte), var(--primario-fonte-secundario)) ;
+}
+
+h1{
+    font-size:  3.8rem;
+    font-style: normal;
+    color: var(--primario);
+}
+
+h2{
+    font-size: 2.8rem;
+}
+
+h3{
+    font-size: 1.8rem;
+}
+
+h1,h2,h3{
+    text-align: center;
+}
+
+.sombra{
+    box-shadow: 0px 5px 15px 0px rgba(82,78,82,0.85);
+    background-color: var(--blanco);
+    border-radius: 10px;
+    padding: 1rem;
+
+
+}
+
+/*titulos*/
+.titulo span{
+    font-size: 2rem;
+    color: var(--oscuro);
+}
+
+.contenedor{
+    max-width: 120rem;
+    margin: 0 auto;/*ajusta los margenes exteriores*/
+}
+
+.boton{
+    background-color: var(--fondo-secundario);
+    color: var(--blanco);
+    padding: 1rem 3rem;
+    margin: 1rem;
+    font-size: 2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 5px;
+    width: 80%;
+    text-align: center;
+    border: none;
+
+}
+.boton:hover{
+    background-color: var(--primario);
+    cursor: pointer;
+}
+
+@media (min-width: 76.8rem){
+    .boton{
+        margin-top: 2rem;
+        width: auto;
+    }
+}
+/*especificidad*/
+.nav-bg{
+    background-color: var(--fondo-secundario);
+}
+
+.w-100{
+    width: 100%;
+}
+
+.separar{
+    margin-top: 1rem;
+}
+
+/*navegacion principal*/
+.navegacion-principal{
+    display: flex;/*nos permite trabajar con la separacion del contenido*/
+    flex-direction: column;
+    align-items: center;
+}
+
+
+@media (min-width: 76.8rem){
+    .navegacion-principal{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.navegacion-principal a{
+    color: var(--blanco);
+    text-decoration: none;/*quita el subrayado por default*/
+    font-size: 2rem;
+    font-weight: 500;
+    padding: 1rem;/*aumenta la linea del contenedor*/
+}
+
+.navegacion-principal a:hover{
+    background-color: var(--primario);
+    color: var(--blanco);
+}
+
+.hero{
+    background-image: url(../images/fondo.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 41rem;
+    margin: 2rem;
+    position: relative;
+    padding-bottom: 2rem;
+
+}
+
+.contenedor-hero{
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.6);/*anterior*/
+    background-color: rgb(0 0 0 / 60%) ;
+    width: 100%;
+    height: 100%;
+    /*aplicando este codigo se puede centrar */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor-hero h2,
+.contenedor-hero p{
+    color: var(--blanco);
+}
+
+.contenedor-hero .ubicacion{
+    display: flex;
+    align-items: flex-end;
+}
+/*servicios*/
+
+
+@media (min-width: 76.8rem){
+    .servicios{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 1rem;
+    }
+}
+
+.servicio{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.servicio h3{
+    font-size: 2rem;
+    color: var(--fondo-secundario);
+    font-weight: bold;
+}
+.servicio p{
+    line-height: 2;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+.servicio .iconos{
+    height: 15rem;
+    width: 15rem;
+    background-color: var(--primario);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*contacto*/
+.formulario{
+    background-color: #bdb5e7;
+    width: min(60rem, 100%);
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+.formulario fieldset{
+    border: none;
+}
+
+.formulario legend{
+    text-align: center;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    color: var(--primario);
+}
+
+@media (min-width: 76.8rem){
+    .campos{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto auto 20rem;
+        column-gap: 1rem;
+
+    }
+    .campo:nth-child(3),
+    .campo:nth-child(4){
+        grid-column: 1/3;
+    }
+}
+
+.campo{
+    margin-bottom: 2rem;
+}
+
+.campo label{
+    color: var(--blanco);
+    font-weight: bold;
+    margin-bottom: .5rem;
+    display: block;
+}
+
+
+.input-text{
+    width: 100%;
+    border: none;
+    padding: 1.5rem;
+    border-radius: .5rem;
+}
+
+.footer{
+    text-align: center;
+}
+
